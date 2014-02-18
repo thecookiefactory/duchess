@@ -14,6 +14,7 @@ class Config(object):
 
 class Development(Config):
     DEBUG = True
+    REDIS_URL = 'redis://:password@hostname:6380/1'
 
 
 class Testing(Config):
