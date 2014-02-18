@@ -1,9 +1,8 @@
 from flask import render_template
 
 
-def init_views():
-    from duchess import duchess
+def init_views(app):
 
-    @duchess.route('/')
+    @app.route('/')
     def index():
         return render_template('index.html')
