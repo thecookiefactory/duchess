@@ -7,4 +7,4 @@ DEBUG = False
 TESTING = False
 
 SECRET_KEY = os.urandom(24)
-SQLALCHEMY_DATABASE_URI = 'mysql://username:password@hostname/database'
+REDIS_URL = 'redis://:password@hostname:6380/0'
