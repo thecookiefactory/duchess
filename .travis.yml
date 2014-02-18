@@ -12,7 +12,7 @@ script:
   - flake8 . --max-complexity 10
 services:
   - redis-server
-env: DUCHESS_ENV=testing
+env: DUCHESS_ENV=Testing
 matrix:
   allow_failures:
     - python: '3.3'
