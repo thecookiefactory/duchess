@@ -1,0 +1,2 @@
+-r common.txt
+flask-testing>=0.4

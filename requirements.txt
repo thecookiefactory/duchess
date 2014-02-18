@@ -1,3 +1,0 @@
-flask==0.10
-flask-debugtoolbar==0.9
-flask-redis==0.0.5
