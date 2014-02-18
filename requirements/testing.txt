@@ -2,3 +2,4 @@
 --allow-external twill
 --allow-unverified twill
 flask-testing>=0.4
+flake8>=2.1

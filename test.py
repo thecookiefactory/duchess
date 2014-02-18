@@ -1,4 +1,5 @@
-from flask.ext.testing import TestCase, Twill
+from flask.ext.testing import TestCase
+import urllib2
 
 from duchess import duchess
 
@@ -9,11 +10,11 @@ class ViewsTest(TestCase):
         return duchess
 
     def test_index(self):
-        with Twill(self.app, port=3000) as t:
-            t.browser.go(t.url('/'))
-            self.assertEqual(t.browser.get_code(), 200)
+        r = urllib2.urlopen('http://localhost:5000/')
+        self.assert_200(r)
+        r = urllib2.urlopen('http://localhost:5000')
+        self.assert_200(r)
 
     def test_asdf(self):
-        with Twill(self.app, port=3000) as t:
-            t.browser.go(t.url('/asdf/'))
-            self.assertEqual(t.browser.get_code(), 404)
+        r = urllib2.urlopen('http://localhost:5000/asdf/')
+        self.assert_404(r)
