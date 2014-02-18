@@ -1,2 +1,4 @@
 -r common.txt
+--allow-external twill
+--allow-unverified twill
 flask-testing>=0.4
