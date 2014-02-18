@@ -5,8 +5,6 @@ python:
 install: pip install -r requirements/testing.txt
 before_script:
   - mv config.py.template config.py
-  - ./run.py
-  - sleep 5
 script:
   - nosetests
   - flake8 . --max-complexity 10
