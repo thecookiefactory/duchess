@@ -10,7 +10,7 @@ playing it.
 ## Dependencies
 
  * [Python 2.7][1]
-   - [pip][2]
+   - [pip][2] *(Optional, but very recommended)*
    - [virtualenv][3] *(Optional, but recommended)*
  * [redis-server][4]
 
