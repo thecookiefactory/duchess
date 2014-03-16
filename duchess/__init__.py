@@ -2,7 +2,7 @@ import os
 
 from flask import Flask
 from flask_redis import Redis
-from views import init_views
+from duchess.views import init_views
 
 
 def create_app():

@@ -3,13 +3,9 @@ python:
   - '2.7'
   - '3.3'
 install: pip install -r requirements/testing.txt
-before_script:
-  - mv config.py.template config.py
-script:
-  - nosetests
-  - flake8 .
-services:
-  - redis-server
+before_script: mv config.py.template config.py
+script: invoke test
+services: redis-server
 env: DUCHESS_ENV=Testing
 matrix:
   allow_failures:
