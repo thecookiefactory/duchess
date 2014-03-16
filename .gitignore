@@ -1,5 +1,4 @@
 config.py
 
-*.css
-*.min.js
 *.pyc
+*.min.*
