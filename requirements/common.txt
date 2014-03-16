@@ -1,5 +1,5 @@
 flask>=0.10
 flask-redis>=0.0.5
 invoke>=0.7
-scss>0.8.72
+scss>=0.8.72
 slimit>=0.8.1
