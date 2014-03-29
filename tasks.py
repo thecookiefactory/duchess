@@ -8,7 +8,7 @@ from slimit import minify as js_minify
 @task
 def build():
     for filename in os.listdir('duchess/assets/css'):
-        if filename.endswith('.sass'):
+        if filename.endswith('.sass') and not filename.startswith('_'):
             sass_file_path = os.path.join('duchess/assets/css/', filename)
             css_file_path = sass_file_path + '.css'
 
