@@ -9,6 +9,13 @@ class ViewsTest(TestCase):
         duchess = create_app()
         return duchess
 
+    def test_app(self):
+        from flask import Flask
+        duchess = self.create_app()
+        print(duchess.config)
+        self.assertIsInstance(duchess, Flask)
+        self.assertTrue(duchess.testing)
+
     def test_index(self):
         r = self.client.get('/')
         self.assert_200(r)

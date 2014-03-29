@@ -4,6 +4,7 @@ from invoke import task, run
 from csscompressor import compress as css_minify
 from slimit import minify as js_minify
 
+
 @task
 def build():
     for filename in os.listdir('duchess/assets/css'):
@@ -41,5 +42,5 @@ def start():
 
 @task('build')
 def test():
-    run('nosetests test.py')
+    run('export DUCHESS_ENV=Testing; nosetests test.py --with-coverage')
     run('flake8 .')

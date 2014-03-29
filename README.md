@@ -1,9 +1,9 @@
-duchess [![Build Status](https://travis-ci.org/thecookiefactory/duchess.png?branch=master)](https://travis-ci.org/thecookiefactory/duchess)
+duchess [![Build Status](https://travis-ci.org/thecookiefactory/duchess.png?branch=master)](https://travis-ci.org/thecookiefactory/duchess) [![Coverage Status](HTTPS://COVERALLS.IO/REPOS/THECOOKIEFACTORY/DUCHESS/BADGE.PNG)](HTTPS://COVERALLS.IO/R/THECOOKIEFACTORY/DUCHESS)
 =======
 
 ## Spoiler Alert
 
-This repo contains spoilers for the game itself.  
+This repo contains spoilers for the game itself.
 Please refrain from snooping around too much here if you're planning on ever
 playing it.
 
