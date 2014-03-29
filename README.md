@@ -1,4 +1,4 @@
-duchess [![Build Status](https://travis-ci.org/thecookiefactory/duchess.png?branch=master)](https://travis-ci.org/thecookiefactory/duchess) [![Coverage Status](HTTPS://COVERALLS.IO/REPOS/THECOOKIEFACTORY/DUCHESS/BADGE.PNG)](HTTPS://COVERALLS.IO/R/THECOOKIEFACTORY/DUCHESS)
+duchess [![Build Status](https://travis-ci.org/thecookiefactory/duchess.png?branch=master)](https://travis-ci.org/thecookiefactory/duchess) [![Coverage Status](https://coveralls.io/repos/thecookiefactory/duchess/badge.png)](https://coveralls.io/r/thecookiefactory/duchess)
 =======
 
 ## Spoiler Alert
