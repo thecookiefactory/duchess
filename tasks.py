@@ -4,7 +4,6 @@ from invoke import task, run
 from csscompressor import compress as css_minify
 from slimit import minify as js_minify
 
-
 @task
 def build():
     for filename in os.listdir('duchess/assets/css'):
@@ -18,11 +17,10 @@ def build():
         if filename.endswith('.sass.css'):
             css_file_path = os.path.join('duchess/assets/css/', filename)
             min_css_file_path = css_file_path.replace('.sass.css', '.min.css')
-            css_file = open(css_file_path)
-            min_css_file = open(min_css_file_path, 'w')
-
-            min_css_file.write(css_minify(css_file.read()))
-            run('rm %s' % css_file_path)
+            with open(css_file_path) as css_file:
+                with open(min_css_file_path, 'w') as min_css_file:
+                    min_css_file.write(css_minify(css_file.read()))
+            os.remove(css_file_path)
 
     for filename in os.listdir('duchess/assets/js'):
         if filename.endswith('.js') and '.min.js' not in filename:
