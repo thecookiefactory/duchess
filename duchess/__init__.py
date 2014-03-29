@@ -3,6 +3,7 @@ import os
 from flask import Flask
 from flask_redis import Redis
 from duchess.views import init_views
+from utils import autocompiler
 
 
 def create_app():
@@ -15,6 +16,8 @@ def create_app():
     if duchess.debug:
         from flask.ext.debugtoolbar import DebugToolbarExtension
         toolbar = DebugToolbarExtension(duchess)
+
+        autocompiler.watch_assets('duchess/assets')
 
     init_views(duchess)
 
