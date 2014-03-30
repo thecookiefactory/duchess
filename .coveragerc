@@ -2,3 +2,7 @@
 omit =
     */python?.?/*
     */site-packages/*
+
+exclude_lines =
+    # nocov
+    if \w+\.debug

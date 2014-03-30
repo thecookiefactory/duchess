@@ -36,11 +36,11 @@ def build():
 
 
 @task('build')
-def start():
+def start():  # nocov
     run('./run.py')
 
 
 @task('build')
-def test():
+def test():  # nocov
     run('export DUCHESS_ENV=Testing; nosetests test.py --with-coverage')
     run('flake8 .')
