@@ -4,16 +4,18 @@
     <title>Duchess</title>
     <meta charset='utf-8'>
     <link rel='stylesheet' href='{{ url_for('static', filename='css/base.min.css') }}'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <section class='hero'>
         <h1>Duchess</h1>
-        <button class='start'>Start</button>
-        <button class='load'>Load</button>
+        <div class='buttons'>
+          <button class='start' type='button'>Start</button><br>
+          <a class='load' href='#'>(or load a saved game)</a>
+        </div>
     </section>
     <section class='about'>
-    <h2>Aboot</h2>
-
+    <h2>About</h2>
     </section>
   </body>
 </html>

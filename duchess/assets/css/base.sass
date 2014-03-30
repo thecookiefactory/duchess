@@ -1,7 +1,7 @@
 @import duchess/assets/css/_reset.sass
 
-$duchess-primary = #030126
-$duchess-secondary = #FBFEAA
+$duchess-primary = rgb(2, 0, 17)
+$duchess-secondary = invert($duchess-primary)
 
 html, body
   height: 100%
@@ -10,9 +10,58 @@ section.hero
   background-color: $duchess-primary
   height: 100%
 
+  &:before
+    content: ''
+    display: block
+    height: 30%
+
   & h1
     color: $duchess-secondary
+    width: 100%
+    font-family: Lato, sans-serif
+    font-size: 128px
+    font-weight: 300
+    text-transform: uppercase
+    text-align: center
 
+  & .buttons
+    margin-top: 1em
+    text-align: center
+
+    & .start
+      width: 240px
+      height: 60px
+      background-color: desaturate(lighten($duchess-primary, 30%), 80%)
+      border: 0
+      color: $duchess-secondary
+      line-height: 60px
+      font-family: Lato, sans-serif
+      font-size: 28px
+      font-weight: 300
+      box-shadow: 4px
+      border-radius: 4px
+      text-transform: uppercase
+      cursor: pointer
+      transition: background-color 0.5s, color 0.5s
+
+      &:after
+        content: ' »'
+
+      &:hover
+        background-color: desaturate(lighten($duchess-primary, 40%), 90%)
+        color: black
+
+    & .load
+      font-family: Lato, sans-serif
+      font-size: 18px
+      line-height: 36px
+      font-weight: 300
+      color: $duchess-secondary
+      text-decoration: none
+      transition: color 0.5s
+
+      &:hover
+        color: lighten($duchess-secondary, 20%)
 
 section.about
   background-color: $duchess-secondary
