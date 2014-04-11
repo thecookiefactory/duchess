@@ -2,7 +2,9 @@ import os
 
 from flask import Flask
 from flask_redis import Redis
+
 from duchess.views import init_views
+from duchess.api import api_router
 from utils import autocompiler
 
 
@@ -20,5 +22,6 @@ def create_app():
         autocompiler.watch_assets('duchess/assets')
 
     init_views(duchess)
+    duchess.register_blueprint(api_router)
 
     return duchess
