@@ -13,7 +13,7 @@ def create_app():
                     static_folder='assets')
     env = os.getenv('DUCHESS_ENV', 'Development')
     duchess.config.from_object('config.%s' % env)
-    redis_store = Redis(duchess)
+    duchess.redis_store = Redis(duchess)
 
     if duchess.debug:
         from flask.ext.debugtoolbar import DebugToolbarExtension
