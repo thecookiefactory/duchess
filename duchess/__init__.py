@@ -14,7 +14,7 @@ def create_app():
     env = os.getenv('DUCHESS_ENV', 'Development')
     try:
         duchess.config.from_object('config.%s' % env)
-    except ImportError:  # Assuming Heroku
+    except ImportError:  # Assuming Heroku
         duchess.config.update(
             APP_DIR=os.path.abspath(os.path.dirname(__file__)),
             PROJECT_ROOT=os.path.abspath(os.path.join(APP_DIR, os.pardir)),
