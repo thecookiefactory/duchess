@@ -1,2 +1,2 @@
-web: invoke start
+web: newrelic-admin run-program invoke start
 
