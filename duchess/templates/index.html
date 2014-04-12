@@ -8,17 +8,17 @@
   </head>
   <body>
     <section class='hero'>
+      <h1>Duchess</h1>
+      <div class='buttons'>
+        <button class='start' type='button'>Start</button><br>
+        <a class='load' href='#'>(or load a saved game)</a>
+      </div>
       <video class='background' loop autoplay>
         <source src='{{ url_for('static', filename='media/background.webm') }}' type='video/webm'>
       </video>
       <video class='intro' preload='auto'>
         <source src='{{ url_for('static', filename='media/thecookiefactory-logo.webm') }}' type='video/webm'>
       </video>
-      <h1>Duchess</h1>
-      <div class='buttons'>
-        <button class='start' type='button'>Start</button><br>
-        <a class='load' href='#'>(or load a saved game)</a>
-      </div>
     </section>
     <section class='about'>
     <h2>About</h2>
