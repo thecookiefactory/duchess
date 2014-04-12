@@ -3,6 +3,8 @@
 $duchess-primary = rgba(2, 0, 17, 1)
 $duchess-secondary = darken(invert($duchess-primary), 5%)
 
+$duchess-font = Lato
+
 html, body
   height: 100%
 
@@ -15,27 +17,44 @@ section.hero
     display: block
     height: 30%
 
-  & video
+  & video.background
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    z-index: -2
+    overflow: hidden
+    -webkit-filter: hue-rotate(-80deg) brightness(0.3)
+    transition: -webkit-filter 1s 0.5s
+
+  & video.intro
+    opacity: 0
     position: absolute
     bottom: 0
     left: 0
     width: 100%
     z-index: -1
     overflow: hidden
-    -webkit-filter: hue-rotate(-80deg) brightness(0.3)
+    transition: opacity 1s 2s
 
   & h1
+    opacity: 1
     color: $duchess-secondary
     width: 100%
-    font-family: Lato, sans-serif
+    font-family: $duchess-font, sans-serif
     font-size: 128px
     font-weight: 300
     text-transform: uppercase
     text-align: center
+    -webkit-transform: translateY(0)
+    transition: -webkit-transform 2s, opacity 1s 0.5s
 
   & .buttons
+    opacity: 1
     margin-top: 1em
     text-align: center
+    -webkit-transform: translateY(0)
+    transition: -webkit-transform 2s, opacity 1s 0.5s
 
     & .start
       width: 240px
@@ -44,7 +63,7 @@ section.hero
       border: 0
       color: $duchess-secondary
       line-height: 60px
-      font-family: Lato, sans-serif
+      font-family: $duchess-font, sans-serif
       font-size: 28px
       font-weight: 300
       box-shadow: 4px
@@ -61,7 +80,7 @@ section.hero
         color: black
 
     & .load
-      font-family: Lato, sans-serif
+      font-family: $duchess-font, sans-serif
       font-size: 18px
       line-height: 36px
       font-weight: 300
@@ -71,6 +90,22 @@ section.hero
 
       &:hover
         color: lighten($duchess-secondary, 20%)
+
+  &.started
+
+    & video.background
+      -webkit-filter: hue-rotate(0) brightness(1)
+
+    & video.intro
+      opacity: 1
+
+    & h1
+      opacity: 0
+      -webkit-transform: translateY(-100px)
+
+    & .buttons
+      opacity: 0
+      -webkit-transform: translateY(100px)
 
 section.about
   background-color: $duchess-secondary

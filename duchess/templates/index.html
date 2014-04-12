@@ -4,12 +4,15 @@
     <title>Duchess</title>
     <meta charset='utf-8'>
     <link rel='stylesheet' href='{{ url_for('static', filename='css/base.min.css') }}'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
   </head>
-  <body>    
+  <body>
     <section class='hero'>
-      <video loop autoplay>
+      <video class='background' loop autoplay>
         <source src='{{ url_for('static', filename='media/background.webm') }}' type='video/webm'>
+      </video>
+      <video class='intro' autopreload>
+        <source src='{{ url_for('static', filename='media/thecookiefactory-logo.webm') }}' type='video/webm'>
       </video>
       <h1>Duchess</h1>
       <div class='buttons'>
@@ -20,5 +23,7 @@
     <section class='about'>
     <h2>About</h2>
     </section>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js'></script>
+    <script src='{{ url_for('static', filename='js/index.min.js') }}'></script>
   </body>
 </html>
