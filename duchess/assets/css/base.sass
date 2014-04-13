@@ -57,6 +57,7 @@ section.hero
     transition: -webkit-transform 2s, opacity 1s 0.5s
 
     & .start
+      outline: none
       width: 240px
       height: 60px
       background-color: desaturate(lighten($duchess-primary, 30%), 80%)
@@ -66,11 +67,10 @@ section.hero
       font-family: $duchess-font, sans-serif
       font-size: 28px
       font-weight: 300
-      box-shadow: 4px
       border-radius: 4px
       text-transform: uppercase
       cursor: pointer
-      transition: background-color 0.5s, color 0.5s
+      transition: background-color 0.5s, color 0.5s, box-shadow 0.1s
 
       &:after
         content: ' »'
@@ -78,6 +78,9 @@ section.hero
       &:hover
         background-color: desaturate(lighten($duchess-primary, 40%), 90%)
         color: black
+
+      &:focus
+        box-shadow: 0 0 8px black inset
 
     & .load
       font-family: $duchess-font, sans-serif
