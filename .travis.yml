@@ -1,7 +1,7 @@
 language: python
 python:
-  - '2.7'
-  - '3.3'
+- '2.7'
+- '3.3'
 install: pip install -r requirements/testing.txt
 before_script: mv config.py.template config.py
 script: invoke test
@@ -10,4 +10,11 @@ env: DUCHESS_ENV=Testing
 after_success: coveralls
 matrix:
   allow_failures:
-    - python: '3.3'
+  - python: '3.3'
+deploy:
+  provider: heroku
+  api_key:
+    secure: kUYitbmbdGYUzQrB4icY5Gk9vpBMm4k6llh/zTfFulX7zo8MUcXHbBCLdgTivt15MJb82bLZBax41j9N5s5a9MhWDC4WNirxbmkgq1rdQuglh+LJqEzGD/IzTjiByvs/lHD0g6h4bvytzpYE2tWJlDGhaKok5RPM2VZMe1XJDNE=
+  app: duchess-tcf
+  on:
+    repo: thecookiefactory/duchess
