@@ -17,9 +17,9 @@ def create_app():
     except ImportError:  # Assuming Heroku
         duchess.config.update(
             APP_DIR=os.path.abspath(os.path.dirname(__file__)),
-            PROJECT_ROOT=os.path.abspath(os.path.join(
-                os.path.abspath(os.path.dirname(__file__)
-            ), os.pardir)),
+            PROJECT_ROOT=os.path.abspath(
+                os.path.join(os.path.dirname(__file__), os.pardir)
+            ),
             SECRET_KEY=os.urandom(24),
             DEBUG=bool(os.getenv('DEBUG')),
             REDIS_URL=os.getenv('REDISCLOUD_URL'),
