@@ -35,11 +35,11 @@ def build():
             )
 
 
-@task('build')
+@task(pre=[build])
 def start():  # nocov
     run('./run.py')
 
 
-@task('build')
+@task(pre=[build])
 def test():  # nocov
     run('export DUCHESS_ENV=Testing; nosetests test.py --with-coverage')
