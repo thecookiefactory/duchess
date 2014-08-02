@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Duchess Admin</title>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    <link rel='stylesheet' href='{{ url_for('static', filename='css/base.min.css') }}'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  </head>
+  <body>
+    <div class='container'>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a class="navbar-brand" href="#">Duchess Admin Panel</a>
+          </div>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Main</a></li>
+        </ul>
+      </nav>
+      <div class='jumbotron'>
+        <h1>Hey, admins!</h1>
+        <p>You go admin the shit outta this site!</p>
+      </div>
+    </div>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js'></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src='{{ url_for('static', filename='js/index.min.js') }}'></script>
+  </body>
+</html>
