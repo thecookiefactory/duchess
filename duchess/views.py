@@ -1,6 +1,7 @@
 from flask import render_template, current_app
 from uuid import uuid4
 
+
 def init_views(app):
 
     @app.route('/')
@@ -27,4 +28,6 @@ def init_views(app):
             for key in slide_keys
         )
 
-        return render_template('admin/slides.html', slides=slides, random_id=str(uuid4())[4:13])
+        return render_template(
+            'admin/slides.html', slides=slides, random_id=str(uuid4())[4:13]
+        )
