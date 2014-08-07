@@ -1,0 +1,42 @@
+{% extends 'admin/layout.html' %}
+{% set active_page = 'slides' %}
+{% block content %}
+<h1>Slides</h1>
+<table class='table table-striped'>
+  <thead>
+  <tr>
+    <th class='col-lg-2'>ID</th>
+    <th class='col-lg-4'>Text</th>
+    <th class='col-lg-4'>Image</th>
+    <th class='col-lg-2'>Do Stuff</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for slide in slides %}
+  <tr>
+    <td class='slide-id'>{{ slide['id'] }}</td>
+    <td class='slide-text'>{{ slide['text'] }}</td>
+    <td class='slide-image'><a>{{ slide['image'] }}</a></td>
+    <td>
+      <div class='btn-group btn-group-justified'>
+        <div class='btn-group'>
+          <button type='button' class='btn btn-default'><span class='glyphicon glyphicon-pencil'></span></button>
+        </div>
+        <div class='btn-group'>
+          <button type='button' class='btn btn-default btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
+        </div>
+      </div>
+    </td>
+  </tr>
+  {% endfor %}
+  <tr>
+    <form id='add-slide'>
+    <td><input class='slide-id form-control' type='text' value='{{ random_id }}' readonly></td>
+    <td><input class='slide-text form-control' type='text' placeholder='text'></td>
+    <td><input class='slide-image form-control' type='text' placeholder='image'></td>
+    <td><input type='submit' class='btn btn-default btn-success btn-block'><span class='glyphicon glyphicon-plus'></span></input></td>
+    </form>
+  </tr>
+  </tbody>
+</table>
+{% endblock %}

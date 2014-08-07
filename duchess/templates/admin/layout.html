@@ -1,0 +1,51 @@
+{% set nav_items = [
+    ('/admin', 'home', 'Home'),
+    ('/admin/slides', 'slides', 'Slides'),
+    ('/admin/users', 'users', 'Users'),
+] -%}
+{% set active_page = active_page|default('home') -%}
+<!doctype html>
+<html>
+  <head>
+    <title>Duchess Admin</title>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='{{ url_for('static', filename='css/base.min.css') }}'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class='container'>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/admin">Duchess Admin</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              {% for href, id, name in nav_items %}
+                <li{% if id == active_page %} class="active"{% endif %}><a href="{{ href }}">{{ name }}</a></li>
+              {% endfor %}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      {% block content %}
+      {% endblock %}
+    </div>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js'></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src='{{ url_for('static', filename='js/admin.min.js') }}'></script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 flask>=0.10
 flask-redis>=0.0.5
-invoke>=0.7
+invoke>=0.7,<0.8
 isass>=0.1.1
 slimit>=0.8.1
 csscompressor>=0.9.1

@@ -24,11 +24,11 @@ def create_app():
             DEBUG=bool(os.getenv('DEBUG')),
             REDIS_URL=os.getenv('REDISCLOUD_URL'),
         )
-    duchess.redis_store = Redis(duchess)
+    duchess.redis = Redis(duchess)
 
     if duchess.debug:
         from flask.ext.debugtoolbar import DebugToolbarExtension
-        toolbar = DebugToolbarExtension(duchess)
+        DebugToolbarExtension(duchess)
 
         autocompiler.watch_assets('duchess/assets')
 
